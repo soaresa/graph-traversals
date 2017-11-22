@@ -33,11 +33,11 @@ public class BreadthFirstSearch {
                 this.pathLength = this.pathLengths[next];
                 continue;
             }
-            for (int adjacencies : g.adj(next)) {
+            for (int adjacency : g.adj(next)) {
                 /* enqueue only unvisited adjacent vertices */
-                if (this.pathLengths[adjacencies] == 0) {
-                    this.pathLengths[adjacencies] = this.pathLengths[next] + 1;
-                    q.enqueue(adjacencies);
+                if (this.pathLengths[adjacency] == 0) {
+                    this.pathLengths[adjacency] = this.pathLengths[next] + 1;
+                    q.enqueue(adjacency);
                 }
             }            
         }

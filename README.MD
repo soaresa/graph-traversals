@@ -8,9 +8,9 @@ Given the size n of the Graph, number of connections k each vertex must have and
 ## Input
 The first line provides size n of the graph, the second line provides the number k of random connections each vertex must have, and the third line provides the number t of sampling random searches the program must produce.  
 
-#Constraints
-1 < n < 10^6
-1 < k < 50
+# Constraints
+1 < n < 10^6  
+1 < k < 50  
 
 ## Output
 The output must show t lines with a pair of results. The results will be composed by the size of the first path found between each pair using both methods.
@@ -18,9 +18,9 @@ The output must show t lines with a pair of results. The results will be compose
 ## Example
 
 ### Input below:
-100000
-20
-20
+100000  
+20  
+20  
 
 ### Outputs:
 #### Path to Target
@@ -39,6 +39,6 @@ The output must show t lines with a pair of results. The results will be compose
 Run the class GraphSampling to start a new random sampling.
 
 ## TODO 
-provide command to clone project.
-provide commands to compile and run it.
+provide command to clone project.  
+provide commands to compile and run it.  
 

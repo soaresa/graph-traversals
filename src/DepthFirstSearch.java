@@ -21,7 +21,7 @@ public class DepthFirstSearch {
         findPath(g, origin, target);
     }
        
-    public void findPath(Graph g, int origin, int target) {       
+    private void findPath(Graph g, int origin, int target) {       
         Stack<Integer> s = new Stack<>();
         s.push(origin);
                
@@ -34,11 +34,11 @@ public class DepthFirstSearch {
                 this.pathLength = this.pathLengths[next];
                 continue;
             }
-            for (int adjacencies : g.adj(next)) {
+            for (int adjacency : g.adj(next)) {
                 /* push to stack only unvisited adjacent vertices*/
-                if (this.pathLengths[adjacencies] == 0) {
-                    this.pathLengths[adjacencies] = this.pathLengths[next] + 1;
-                    s.push(adjacencies);
+                if (this.pathLengths[adjacency] == 0) {
+                    this.pathLengths[adjacency] = this.pathLengths[next] + 1;
+                    s.push(adjacency);
                 }
             }
         }
@@ -52,16 +52,16 @@ public class DepthFirstSearch {
         return this.visitedVertices;
     }
     
-    /*public int findPathRecursive(Graph g, int node, int target) {
-        this.visitedNodes++;
-        if (node == target) {
-            this.pathLength = this.pathLengths[node];
+    /*private int findPathRecursive(Graph g, int origin, int target) {
+        this.visitedVertices++;
+        if (origin == target) {
+            this.pathLength = this.pathLengths[origin];
             return this.pathLength;
         }
-        for (int connection : g.adj(node)) {
+        for (int connection : g.adj(origin)) {
             if (this.pathLengths[connection] == 0) {
-                this.pathLengths[connection] = this.pathLengths[node] + 1;
-                int result = dfsRecursive(g, connection, target);
+                this.pathLengths[connection] = this.pathLengths[origin] + 1;
+                int result = findPathRecursive(g, connection, target);
                 if (result > 0) {
                     this.pathLength = result;
                     break;
